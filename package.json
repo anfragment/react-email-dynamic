@@ -1,0 +1,49 @@
+{
+  "name": "react-email-dynamic",
+  "version": "0.1.0",
+  "description": "Render dynamic email templates with React Email and SWC.",
+  "homepage": "https://github.com/anfragment/react-email-dynamic#readme",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=10.0.0"
+  },
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anfragment/react-email-dynamic.git"
+  },
+  "scripts": {
+    "build": "tsup ./src"
+  },
+  "keywords": [
+    "react-email",
+    "email"
+  ],
+  "author": "Ansar Smagulov <ansar@anfragment.net>",
+  "devDependencies": {
+    "@types/react": "^18.2.74",
+    "prettier": "^3.2.5",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "@react-email/components": "^0.0.16",
+    "@react-email/render": "^0.0.12",
+    "@swc/core": "^1.4.11",
+    "react": "^18.2.0"
+  }
+}
