@@ -86,5 +86,3 @@ export function renderSync(
 
   return reactEmailRender.render(element, options?.reactEmailRenderOptions);
 }
-
-

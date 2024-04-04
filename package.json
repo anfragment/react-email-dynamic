@@ -1,7 +1,7 @@
 {
   "name": "react-email-dynamic",
-  "version": "0.1.0",
-  "description": "Render dynamic email templates with React Email and SWC.",
+  "version": "1.0.0",
+  "description": "Render dynamic React Email templates at runtime.",
   "homepage": "https://github.com/anfragment/react-email-dynamic#readme",
   "license": "MIT",
   "engines": {
