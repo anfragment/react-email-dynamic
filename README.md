@@ -51,7 +51,7 @@ Renders the given template string into an HTML string asynchronously.
 Renders the given template string into an HTML string synchronously. Use in environments where asynchronous calls are not possible or desired.
 
 ### `RenderOptions`
-- `reactEmailRenderOptions?: @react-email/render.Options`: Options passed to the React Email's render function. Useful for converting the template to plain text.
+- `reactEmailRenderOptions?: @react-email/render.Options`: Options passed to the [React Email's render function](https://react.email/docs/utilities/render). Pass `{ plainText: true }` to render plain text instead of HTML.
 - `scope?: Record<string, any>`: An object serving as the scope for the template. Enables the passing of data and/or custom components. See the [Advanced Usage](#advanced-usage-custom-components-and-data) section for more information.
 - `swcOptions?: swc.Options`: Configuration options for the [SWC compiler](https://swc.rs/docs/usage/core#transform), allowing adjustments to the JSX parser and other compile-time settings.
 

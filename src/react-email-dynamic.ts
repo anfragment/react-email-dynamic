@@ -18,15 +18,19 @@ const defaultSWCOptions: swc.Options = {
 
 interface RenderOptions {
   /**
-   * Options for the `@react-email/render` package. Optional.
+   * Options passed to the `@react-email/render`'s `render` function. Pass `{ plainText: true }` to render plain text instead of HTML.
+   * @see https://react.email/docs/utilities/render
    */
   reactEmailRenderOptions?: reactEmailRender.Options,
   /**
-   * Options for the `@swc/core` package. Optional.
+   * Configuration options for the SWC compiler.
+   * @see https://swc.rs/docs/usage/core#transform
+   * @see https://swc.rs/docs/configuration/swcrc
    */
   swcOptions?: swc.Options,
   /**
-   * Custom scope to be injected into the template. Can be used to provide additional components or variables to the template. Optional.
+   * An object serving as the scope for the template. Enables the passing of data and/or custom components.
+   * @see https://github.com/anfragment/react-email-dynamic?tab=readme-ov-file#advanced-usage-custom-components-and-data
    */
   scope?: Record<string, any>,
 }
