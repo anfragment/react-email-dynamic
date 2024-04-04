@@ -16,34 +16,36 @@ const defaultSWCOptions: swc.Options = {
   },
 };
 
+interface RenderOptions {
+  /**
+   * Options for the `@react-email/render` package. Optional.
+   */
+  reactEmailRenderOptions?: reactEmailRender.Options,
+  /**
+   * Options for the `@swc/core` package. Optional.
+   */
+  swcOptions?: swc.Options,
+  /**
+   * Custom scope to be injected into the template. Can be used to provide additional components or variables to the template. Optional.
+   */
+  scope?: Record<string, any>,
+}
+
 /**
  * Render a React Email template.
  * @returns The rendered string (HTML or plain text).
  */
 export async function render(
   /**
-   * The input React Email template, written in JSX.
+   * The React Email template to be rendered, written in JSX.
    */
-  input: string,
+  template: string,
   /**
    * Optional options to customize the render process.
    */
-  options?: {
-    /**
-     * Options for the `@react-email/render` package. Optional.
-     */
-    reactEmailRenderOptions?: reactEmailRender.Options,
-    /**
-     * Options for the `@swc/core` package. Optional.
-     */
-    swcOptions?: swc.Options,
-    /**
-     * Custom scope to be injected into the template. Can be used to provide additional components or variables to the template. Optional.
-     */
-    scope?: Record<string, any>,
-  }
+  options?: RenderOptions,
 ): Promise<string> {
-  const { code } = await swc.transform(input, options?.swcOptions ?? defaultSWCOptions);
+  const { code } = await swc.transform(template, options?.swcOptions ?? defaultSWCOptions);
 
   const scope = {
     React,
@@ -61,28 +63,15 @@ export async function render(
  */
 export function renderSync(
   /**
-   * The input React Email template, written in JSX.
+   * The React Email template to be rendered, written in JSX.
    */
-  input: string,
+  template: string,
   /**
    * Optional options to customize the render process.
    */
-  options?: {
-    /**
-     * Options for the `@react-email/render` package. Optional.
-     */
-    reactEmailRenderOptions?: reactEmailRender.Options,
-    /**
-     * Options for the `@swc/core` package. Optional.
-     */
-    swcOptions?: swc.Options,
-    /**
-     * Custom scope to be injected into the template. Can be used to provide additional components or variables to the template. Optional.
-     */
-    scope?: Record<string, any>,
-  }
+  options?: RenderOptions,
 ): string {
-  const { code } = swc.transformSync(input, options?.swcOptions ?? defaultSWCOptions);
+  const { code } = swc.transformSync(template, options?.swcOptions ?? defaultSWCOptions);
 
   const scope = {
     React,
