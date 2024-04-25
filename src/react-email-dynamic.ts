@@ -10,10 +10,7 @@ const defaultSWCOptions: swc.Options = {
       jsx: true,
     },
   },
-  module: {
-    type: 'commonjs',
-    strictMode: false,
-  },
+  isModule: false,
 };
 
 interface RenderOptions {
