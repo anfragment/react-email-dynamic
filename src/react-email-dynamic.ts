@@ -9,6 +9,7 @@ const defaultSWCOptions: swc.Options = {
       syntax: 'ecmascript',
       jsx: true,
     },
+    target: 'es2021',
   },
   isModule: false,
 };
